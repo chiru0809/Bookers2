@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <%= render 'sidebar', user:@user, book:@book %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to(user_path(@book_show.user.id)) do %>
+                <span><%= image_tag @book_show.user.get_profile_image(100,100) %></span><br>
+                <%= @book_show.user.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= @book_show.title %>
+            </td>
+            <td>
+              <%= @book_show.body %>
+            </td>
+            <% if @book_show.user == current_user %>
+              <td>
+                <%= link_to 'Edit', edit_book_path(@book_show.id), class:"btn btn-sm btn-success" %>
+              </td>
+              <td>
+                <%= link_to 'Destroy', book_path(@book_show), class:"btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %>
+              </td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
