@@ -34,7 +34,11 @@
                   <span><%= image_tag book.user.get_profile_image(80,80) %></span>
                 <% end %>
               </td>
-              <td><%= book.title %></td>
+              <td>
+                <%= link_to(book_path(book.id)) do %>
+                  <%= book.title %>
+                <% end %>
+              </td>
               <td><%= book.body %></td>
             </tr>
           <% end %>
