@@ -16,8 +16,8 @@
           <% @books.each do |book| %>
             <tr>
               <td>
-                <%= link_to(book_path(book.id)) do %>
-                  <span><%= image_tag @user.get_profile_image(80,80) %></span>
+                <%= link_to(user_path(book.user.id)) do %>
+                  <%= image_tag @user.get_profile_image(80,80) %>
                 <% end %>
               </td>
               <td>

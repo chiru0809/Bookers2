@@ -14,12 +14,13 @@
       </tr>
     </tbody>
   </table>
+  <br>
   <div class="row">
     <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
-      <span class="fa fa-user-cog"></span>
+      <span class="fas fa-user-cog"></span>
     <% end %>
   </div>
-  <h2 class="mt-2">New book</h2>
+  <h2 class="mt-3">New book</h2>
   <%= form_with model: book do |f| %>
     <div class="form-group">
       <label for="book_title">Title</label><br>
